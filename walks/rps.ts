@@ -27,9 +27,9 @@ type NodeId =
 const amble = ambler<State, NodeId>({
   start: () => {
     const core = startFactory({ onReady: "playerChoice" });
-    return (_state: State) => {
-      const [nodeId, _output] = core();
-      return [nodeId, _state];
+    return (state: State) => {
+      const [nodeId, _] = core();
+      return [nodeId, state];
     };
   },
   playerChoice: () => {
@@ -37,6 +37,7 @@ const amble = ambler<State, NodeId>({
       onValid: "computerChoice",
       onInvalid: "playerChoice",
     });
+
     return (state: State) => {
       const [nodeId, output] = core();
       return [nodeId, {
@@ -75,16 +76,6 @@ const amble = ambler<State, NodeId>({
     const core = playAgainFactory({ onYes: "playerChoice", onNo: "stop" });
     return (state: State) => {
       const [nodeId, _output] = core();
-      if (nodeId === "playerChoice") {
-        // Reset state for a new round
-        return [nodeId, {
-          choice: 0,
-          choiceName: "",
-          compChoice: 0,
-          compChoiceName: "",
-          result: "",
-        }];
-      }
       return [nodeId, state];
     };
   },
