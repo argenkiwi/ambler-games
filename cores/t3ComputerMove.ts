@@ -4,7 +4,7 @@ export type Utils = Record<string, never>;
 
 const defaultUtils: Utils = {};
 
-import { canPlace, spaceExists, hasWon } from "./t3Helpers.ts";
+import { canPlace, hasWon } from "../utils/t3Board.ts";
 
 /**
  * Computer AI using the same priority strategy as the original Python script:
@@ -23,7 +23,7 @@ export const factory = <N extends string | null>(
 ): [N, { move: number; board: (string | null)[] }] => {
   const PRIORITIES = [
     [1, 7, 3, 9], // corners
-    [5],          // center
+    [5], // center
     [2, 4, 6, 8], // edges
   ];
 

@@ -4,13 +4,17 @@ export type Utils = Record<string, never>;
 
 const defaultUtils: Utils = {};
 
-import { hasWon } from "./t3Helpers.ts";
+import { hasWon } from "../utils/t3Board.ts";
 
 export const factory = <N extends string | null>(
   edges: Record<Edge, N>,
   _utils = defaultUtils,
 ) =>
-(board: (string | null)[], move: number, playerChar: string): [N, (string | null)[]] => {
+(
+  board: (string | null)[],
+  move: number,
+  playerChar: string,
+): [N, (string | null)[]] => {
   board[move - 1] = playerChar;
 
   if (hasWon(board, playerChar)) {

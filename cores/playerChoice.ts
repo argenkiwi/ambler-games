@@ -18,7 +18,9 @@ export const factory = <N extends string | null>(
 ) =>
 (): [N, { choice: number; choiceName: string }] => {
   while (true) {
-    const raw = utils.readLine("Enter your choice (1=Rock, 2=Paper, 3=Scissor): ");
+    const raw = utils.readLine(
+      "Enter your choice (1=Rock, 2=Paper, 3=Scissor): ",
+    );
 
     if (raw === null) {
       utils.print("Invalid input. Please try again.");

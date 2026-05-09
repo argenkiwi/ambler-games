@@ -14,10 +14,23 @@ export const factory = <N extends string | null>(
   edges: Record<Edge, N>,
   utils = defaultUtils,
 ) =>
-(): [N, { playerChar: string; computerChar: string; board: (string | null)[] }] => {
+(): [
+  N,
+  { playerChar: string; computerChar: string; board: (string | null)[] },
+] => {
   const playerChar = utils.randomBool() ? "X" : "O";
   const computerChar = playerChar === "X" ? "O" : "X";
-  const board: (string | null)[] = [null, null, null, null, null, null, null, null, null];
+  const board: (string | null)[] = [
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+  ];
 
   utils.print(`Player is [${playerChar}] and computer is [${computerChar}]`);
 

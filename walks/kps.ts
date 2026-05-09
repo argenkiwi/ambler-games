@@ -1,8 +1,14 @@
 import { ambler } from "../ambler.ts";
 import { factory as kpsStartFactory } from "../cores/kpsStart.ts";
-import { factory as kpsPlayerChoiceFactory, type Move } from "../cores/kpsPlayerChoice.ts";
+import {
+  factory as kpsPlayerChoiceFactory,
+  type Move,
+} from "../cores/kpsPlayerChoice.ts";
 import { factory as kpsComputerChoiceFactory } from "../cores/kpsComputerChoice.ts";
-import { factory as kpsCompareFactory, type Outcome } from "../cores/kpsCompare.ts";
+import {
+  factory as kpsCompareFactory,
+  type Outcome,
+} from "../cores/kpsCompare.ts";
 import { factory as kpsResultFactory } from "../cores/kpsResult.ts";
 import { factory as playAgainFactory } from "../cores/playAgain.ts";
 import { factory as stopFactory } from "../cores/stop.ts";

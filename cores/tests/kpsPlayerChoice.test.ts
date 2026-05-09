@@ -7,7 +7,10 @@ Deno.test("kpsPlayerChoice core handles valid input", () => {
     print: (msg: string) => messages.push(msg),
     prompt: () => "k",
   };
-  const core = factory({ onSuccess: "computerChoice", onError: "playerChoice" }, utils);
+  const core = factory(
+    { onSuccess: "computerChoice", onError: "playerChoice" },
+    utils,
+  );
   const [edge, output] = core(10, 10);
 
   assertEquals(edge, "computerChoice");
@@ -20,7 +23,10 @@ Deno.test("kpsPlayerChoice core handles invalid input", () => {
     print: (msg: string) => messages.push(msg),
     prompt: () => "invalid",
   };
-  const core = factory({ onSuccess: "computerChoice", onError: "playerChoice" }, utils);
+  const core = factory(
+    { onSuccess: "computerChoice", onError: "playerChoice" },
+    utils,
+  );
   const [edge, output] = core(10, 10);
 
   assertEquals(edge, "playerChoice");

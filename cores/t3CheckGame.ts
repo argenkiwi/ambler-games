@@ -4,7 +4,7 @@ export type Utils = Record<string, never>;
 
 const defaultUtils: Utils = {};
 
-import { spaceExists } from "./t3Helpers.ts";
+import { spaceExists } from "../utils/t3Board.ts";
 
 export const factory = <N extends string | null>(
   edges: Record<Edge, N>,

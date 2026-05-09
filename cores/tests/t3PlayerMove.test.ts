@@ -9,8 +9,21 @@ Deno.test("t3PlayerMove should accept valid move 1", () => {
     readLine: () => readLines[i++],
   };
 
-  const board: (string | null)[] = [null, null, null, null, null, null, null, null, null];
-  const result = factory({ onValid: "playerPlace", onInvalid: "playerMove" }, utils)(board);
+  const board: (string | null)[] = [
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+  ];
+  const result = factory(
+    { onValid: "playerPlace", onInvalid: "playerMove" },
+    utils,
+  )(board);
 
   assertEquals(result[0], "playerPlace");
   assertEquals(result[1].move, 1);
@@ -24,8 +37,21 @@ Deno.test("t3PlayerMove should accept valid move 9", () => {
     readLine: () => readLines[i++],
   };
 
-  const board: (string | null)[] = [null, null, null, null, null, null, null, null, null];
-  const result = factory({ onValid: "playerPlace", onInvalid: "playerMove" }, utils)(board);
+  const board: (string | null)[] = [
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+  ];
+  const result = factory(
+    { onValid: "playerPlace", onInvalid: "playerMove" },
+    utils,
+  )(board);
 
   assertEquals(result[0], "playerPlace");
   assertEquals(result[1].move, 9);
@@ -40,8 +66,21 @@ Deno.test("t3PlayerMove should reject out-of-range input and retry", () => {
     readLine: () => readLines[i++],
   };
 
-  const board: (string | null)[] = [null, null, null, null, null, null, null, null, null];
-  const result = factory({ onValid: "playerPlace", onInvalid: "playerMove" }, utils)(board);
+  const board: (string | null)[] = [
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+  ];
+  const result = factory(
+    { onValid: "playerPlace", onInvalid: "playerMove" },
+    utils,
+  )(board);
 
   assertEquals(result[0], "playerPlace");
   assertEquals(result[1].move, 5);
@@ -57,8 +96,21 @@ Deno.test("t3PlayerMove should reject already-taken cell and retry", () => {
     readLine: () => readLines[i++],
   };
 
-  const board: (string | null)[] = ["X", null, null, null, null, null, null, null, null];
-  const result = factory({ onValid: "playerPlace", onInvalid: "playerMove" }, utils)(board);
+  const board: (string | null)[] = [
+    "X",
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+  ];
+  const result = factory(
+    { onValid: "playerPlace", onInvalid: "playerMove" },
+    utils,
+  )(board);
 
   assertEquals(result[0], "playerPlace");
   assertEquals(result[1].move, 2);
@@ -74,8 +126,21 @@ Deno.test("t3PlayerMove should reject non-numeric input and retry", () => {
     readLine: () => readLines[i++],
   };
 
-  const board: (string | null)[] = [null, null, null, null, null, null, null, null, null];
-  const result = factory({ onValid: "playerPlace", onInvalid: "playerMove" }, utils)(board);
+  const board: (string | null)[] = [
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+  ];
+  const result = factory(
+    { onValid: "playerPlace", onInvalid: "playerMove" },
+    utils,
+  )(board);
 
   assertEquals(result[0], "playerPlace");
   assertEquals(result[1].move, 3);

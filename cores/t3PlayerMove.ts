@@ -10,7 +10,7 @@ const defaultUtils: Utils = {
   readLine: (msg: string) => prompt(msg),
 };
 
-import { canPlace } from "./t3Helpers.ts";
+import { canPlace } from "../utils/t3Board.ts";
 
 export const factory = <N extends string | null>(
   edges: Record<Edge, N>,

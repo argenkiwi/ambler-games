@@ -16,7 +16,7 @@ export const factory = <N extends string | null>(
   } else if (
     (choice === 1 && compChoice === 3) || // Rock beats Scissor
     (choice === 2 && compChoice === 1) || // Paper beats Rock
-    (choice === 3 && compChoice === 2)    // Scissor beats Paper
+    (choice === 3 && compChoice === 2) // Scissor beats Paper
   ) {
     result = choice === 1 ? "Rock" : choice === 2 ? "Paper" : "Scissor";
   } else {

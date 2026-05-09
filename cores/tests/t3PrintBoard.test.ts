@@ -7,7 +7,17 @@ Deno.test("t3PrintBoard should print empty board", () => {
     print: (msg) => printed.push(msg),
   };
 
-  const board: (string | null)[] = [null, null, null, null, null, null, null, null, null];
+  const board: (string | null)[] = [
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+  ];
   const result = factory({ onReady: "playerMove" }, utils)(board);
 
   assertEquals(result[0], "playerMove");
@@ -22,7 +32,17 @@ Deno.test("t3PrintBoard should print board with marks", () => {
     print: (msg) => printed.push(msg),
   };
 
-  const board: (string | null)[] = ["X", null, "O", null, "X", null, null, null, "O"];
+  const board: (string | null)[] = [
+    "X",
+    null,
+    "O",
+    null,
+    "X",
+    null,
+    null,
+    null,
+    "O",
+  ];
   const result = factory({ onReady: "playerMove" }, utils)(board);
 
   assertEquals(result[0], "playerMove");
@@ -38,7 +58,17 @@ Deno.test("t3PrintBoard full board", () => {
     print: (msg) => printed.push(msg),
   };
 
-  const board: (string | null)[] = ["X", "O", "X", "O", "X", "O", "X", "O", "X"];
+  const board: (string | null)[] = [
+    "X",
+    "O",
+    "X",
+    "O",
+    "X",
+    "O",
+    "X",
+    "O",
+    "X",
+  ];
   const result = factory({ onReady: "playerMove" }, utils)(board);
 
   assertEquals(result[0], "playerMove");

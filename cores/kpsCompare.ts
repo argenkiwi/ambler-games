@@ -1,7 +1,15 @@
 export type Edge = "onSuccess";
 
-export type Move = 'kick' | 'punch' | 'sweep' | 'crouch' | 'block' | 'jump';
-export type Outcome = 'Win' | 'Lose' | 'Trade' | 'Chip' | 'Ouch' | 'Dodge' | 'Miss' | 'Draw';
+export type Move = "kick" | "punch" | "sweep" | "crouch" | "block" | "jump";
+export type Outcome =
+  | "Win"
+  | "Lose"
+  | "Trade"
+  | "Chip"
+  | "Ouch"
+  | "Dodge"
+  | "Miss"
+  | "Draw";
 
 export type Utils = {
   print: (msg: string) => void;

@@ -1,6 +1,6 @@
 export type Edge = "onSuccess";
 
-export type Move = 'kick' | 'punch' | 'sweep' | 'crouch' | 'block' | 'jump';
+export type Move = "kick" | "punch" | "sweep" | "crouch" | "block" | "jump";
 
 export type Utils = {
   random: () => number;
