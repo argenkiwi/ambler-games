@@ -1,10 +1,10 @@
 import { ambler } from "../ambler.ts";
-import { factory as slotsStartFactory } from "../cores/slotsStart.ts";
-import { factory as slotsGetBetFactory } from "../cores/slotsGetBet.ts";
-import { factory as slotsSpinFactory } from "../cores/slotsSpin.ts";
 import { factory as slotsCalculateFactory } from "../cores/slotsCalculate.ts";
 import { factory as slotsCheckBalanceFactory } from "../cores/slotsCheckBalance.ts";
 import { factory as slotsEndFactory } from "../cores/slotsEnd.ts";
+import { factory as slotsGetBetFactory } from "../cores/slotsGetBet.ts";
+import { factory as slotsSpinFactory } from "../cores/slotsSpin.ts";
+import { factory as slotsStartFactory } from "../cores/slotsStart.ts";
 
 export interface State {
   balance: number;

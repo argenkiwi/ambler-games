@@ -6,8 +6,10 @@
   "scripts": {
     "test": "bun test --pass-with-no-tests",
     "check": "tsc --noEmit",
+    "codle": "bun walks/codle.ts",
     "lint": "biome check",
     "rps": "bun walks/rps.ts",
+    "slots": "bun walks/slots.ts",
     "kps": "bun walks/kps.ts",
     "t3": "bun walks/t3.ts"
   },

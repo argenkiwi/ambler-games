@@ -1,11 +1,11 @@
 import { ambler } from "../ambler.ts";
-import { factory as startFactory } from "../cores/codleStart.ts";
-import { factory as genCodeFactory } from "../cores/codleGenCode.ts";
-import { factory as getGuessFactory } from "../cores/codleGetGuess.ts";
-import { factory as colorCodeFactory } from "../cores/codleColorCode.ts";
 import { factory as checkWinFactory } from "../cores/codleCheckWin.ts";
+import { factory as colorCodeFactory } from "../cores/codleColorCode.ts";
 import { factory as displayBoardFactory } from "../cores/codleDisplayBoard.ts";
 import { factory as endFactory } from "../cores/codleEnd.ts";
+import { factory as genCodeFactory } from "../cores/codleGenCode.ts";
+import { factory as getGuessFactory } from "../cores/codleGetGuess.ts";
+import { factory as startFactory } from "../cores/codleStart.ts";
 
 export interface State {
   code: string;
@@ -63,10 +63,13 @@ const amble = ambler<State, NodeId>({
     return (state: State) => {
       const latestGuess = state.guesses[state.guesses.length - 1]!;
       const [nodeId, output] = core(latestGuess, state.code);
-      return [nodeId, {
-        ...state,
-        colors: [...state.colors, output.colors],
-      }];
+      return [
+        nodeId,
+        {
+          ...state,
+          colors: [...state.colors, output.colors],
+        },
+      ];
     };
   },
 
@@ -79,9 +82,10 @@ const amble = ambler<State, NodeId>({
     return (state: State) => {
       const latestGuess = state.guesses[state.guesses.length - 1]!;
       const [nodeId] = core(latestGuess, state.code, state.attempts);
-      const newState: State = nodeId === "end"
-        ? { ...state, won: latestGuess === state.code }
-        : state;
+      const newState: State =
+        nodeId === "end"
+          ? { ...state, won: latestGuess === state.code }
+          : state;
       return [nodeId, newState];
     };
   },
