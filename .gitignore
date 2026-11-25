@@ -1,1 +1,25 @@
+# Dependencies
+node_modules/
+
+# IDE
+.vscode/
+.idea/
+
+# Environment variables
+.env
+.env.local
+.env.*.local
+
+# Logs
+*.log
+
+# OS
+.DS_Store
+
+# Local scratch and the azk index (derived from notes/)
 /.local
+.azk/
+
+# Agent settings are local; the skills link is shared
+/.claude/*
+!/.claude/skills
