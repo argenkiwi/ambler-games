@@ -1,6 +1,6 @@
 {
   "name": "ambler-games",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "private": true,
   "type": "module",
   "scripts": {
@@ -11,7 +11,8 @@
     "rps": "bun walks/rps.ts",
     "slots": "bun walks/slots.ts",
     "kps": "bun walks/kps.ts",
-    "t3": "bun walks/t3.ts"
+    "t3": "bun walks/t3.ts",
+    "hangman": "bun walks/hangman.ts"
   },
   "devDependencies": {
     "ambler": "github:argenkiwi/ambler-ts",
