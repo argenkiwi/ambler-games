@@ -1,11 +1,12 @@
 {
   "name": "ambler-games",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "private": true,
   "type": "module",
   "scripts": {
     "test": "bun test --pass-with-no-tests",
     "check": "tsc --noEmit",
+    "2048": "bun walks/2048.ts",
     "codle": "bun walks/codle.ts",
     "lint": "biome check",
     "rps": "bun walks/rps.ts",
